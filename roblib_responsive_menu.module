@@ -59,7 +59,7 @@ function roblib_responsive_menu_block_view_alter(&$data, $block) {
     if (variable_get('roblib_responsive_menu_toggle_' . $delta) == '1') {
 
       $breakpoint = variable_get('roblib_responsive_menu_breakpoint_' . $delta);
-      dsm($breakpoint);
+
       if (isset($data['content'])) {
         $data['content'] = '<div class="roblib-responsive-menu">' . $data['content'] . '</div>';
       }
