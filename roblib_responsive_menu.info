@@ -1,0 +1,7 @@
+name = "Responsive Menu"
+description = "Responsive menus for superfish."
+package = User interface
+dependencies[] = menu
+dependencies[] = superfish
+configure = admin/config/user-interface/responsive-menu
+core = 7.x
