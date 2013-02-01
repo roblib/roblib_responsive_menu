@@ -48,6 +48,10 @@ function roblib_responsive_menu_submit(&$form, &$form_state) {
 
 }
 
+/*
+* Implementation of hook_block_view_alter().
+*/
+
 function roblib_responsive_menu_block_view_alter(&$data, $block) {
   // Load this function only once due to a bug in fusion and aether
   global $roblib_altered;
