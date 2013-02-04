@@ -48,10 +48,6 @@ function roblib_responsive_menu_submit(&$form, &$form_state) {
 
 }
 
-function roblib_responsive_menu_block_info_alter(&$item) {
-  dsm($item);
-}
-
 /*
 * Implementation of hook_block_view_alter().
 */
@@ -75,7 +71,7 @@ function roblib_responsive_menu_block_view_alter(&$data, $block) {
 
       $rsmmenu = 'var $rsm = jQuery.noConflict();' . "\n" . '$rsm' . "(function(){\n" . '$rsm("<select />").appendTo(".roblib-responsive-menu");' . "\n" . '$rsm("<option />", {"selected": "selected","value"   : "","text"    : "' . $name . '"}).appendTo(".roblib-responsive-menu select");' . "\n" . '$rsm(".roblib-responsive-menu a").each(function() {var el = $rsm(this);' . "\n" . '$rsm("<option />", {"value"   : el.attr("href"),"text"    : el.text()}).appendTo(".roblib-responsive-menu select");});' . "\n" . '$rsm(".roblib-responsive-menu select").change(function() {window.location = $rsm(this).find("option:selected").val();});' . "\n" . '});';
 
-      drupal_add_js('http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', array('type' => 'external', 'scope' => 'footer', 'weight' => 4));
+      drupal_add_js('http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js', array('type' => 'external', 'scope' => 'footer', 'weight' => 4));
       drupal_add_js($rsmmenu, array('type' => 'inline', 'scope' => 'footer', 'weight' => 6));
       drupal_add_css(drupal_get_path('module', 'roblib_responsive_menu') .'/css/roblib-responsive-select-menu.css', array('group' => CSS_THEME, 'every_page' => FALSE));
       drupal_add_css(drupal_get_path('module', 'roblib_responsive_menu') .'/css/roblib-responsive-select-menu--mq.css',
