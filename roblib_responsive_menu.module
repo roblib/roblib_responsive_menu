@@ -58,7 +58,7 @@ function roblib_responsive_menu_block_view_alter(&$data, $block) {
 
     $delta = $block->delta;
     if (variable_get('roblib_responsive_menu_toggle_' . $delta) == '1') {
-  // drupal_add_css("body {background-color: #000}", array('group' => CSS_DEFAULT, 'type' => 'inline'));
+
       $name = '';
       if (!empty($data['content'])) {
 
